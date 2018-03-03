@@ -21,7 +21,8 @@ public class testStructures {
         /**/
         //list.printList();
 
-        list.deleteAtPosition(1);
+        //list.deleteAtPosition(1);
+        list.insertAtPosition(1,666);
 
         list.printList();
 

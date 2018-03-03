@@ -7,7 +7,7 @@ public class simpleList {
 
     private node head;
     private node tail;
-    private int lenght;
+    private int listSize;
 
     /*Getters and setter for the attributes*/
     public node getHead() {
@@ -27,11 +27,11 @@ public class simpleList {
     }
 
     public int getLenght() {
-        return lenght;
+        return listSize;
     }
 
     public void setLenght(int lenght) {
-        this.lenght = lenght;
+        this.listSize = lenght;
     }
 
 
@@ -70,6 +70,57 @@ public class simpleList {
         }
     }
 
+    public void insertAtPosition(int position,Object data) {
+        node current = head;
+        int currentLength = getLenght();
+
+        // If linked list is empty
+        if (head == null)
+            return;
+
+        // If head needs to be added
+        else if (position == 0)
+        {
+            insertFirstList(data);
+        }
+
+        // If tails needs to be added
+        else if (position + 1 ==  currentLength)
+        {
+            insertLastlist(data);
+        }
+
+        else {
+
+            for (int index = 0; current != null && index < currentLength - 1; index++) {
+
+                if (index + 1 == position) {
+
+                    /*create the new node that is going to be linked*/
+                    node newNextNode = new node(data);
+
+                    /*point to the previous node in order to finish the linking between them*/
+                    node newNextNextNode = current.getNext();
+
+                    /*connect the new node to the old previous next one*/
+                     newNextNode.setNext(newNextNextNode);
+
+                     /*connect to the first node */
+                    current.setNext(newNextNode);
+
+                    /*update the length of the list*/
+                    setLenght(currentLength + 1);
+                    return;
+                }
+                else {
+                    current=current.getNext();
+                }
+            }
+        }
+
+    }
+
+
     public void deleteLastList()
     {
         if (head.getNext() == null)
@@ -79,9 +130,9 @@ public class simpleList {
         }
         else {
             node current = head;
-
-            for (int index = 0; index < lenght; index++) {
-                if (index + 1 == lenght) {
+            int currentlength = getLenght();
+            for (int index = 0; index < currentlength; index++) {
+                if (index + 1 == currentlength) {
                     current.setNext(null);
                     tail = current;
 
@@ -116,21 +167,33 @@ public class simpleList {
             return;
 
         // If head needs to be removed
-        if (position == 0)
+        else if (position == 0)
         {
-            head = current.getNext();   // Change head
-            return;
+            deleteFistList();
         }
-        for (int index = 0; current != null && index < currentlength - 1;index++)
+
+        // If head needs to be removed
+        else if (position + 1 ==  currentlength)
         {
-            if (current == null || current.getNext() == null)
-            {
-                return;
+            deleteLastList();
+        }
+
+        else {
+
+            for (int index = 0; current != null && index < currentlength - 1; index++) {
+
+                if (index + 1 == position) {
+                    node newNextNode = current.getNext().getNext();
+                    current.setNext(newNextNode);
+                    setLenght(currentlength - 1);
+                    return;
+                }
+                else {
+                    current=current.getNext();
+                }
             }
-            node next = current.getNext().getNext();
-            current.setNext(next);
         }
-      setLenght(currentlength - 1);
+
     }
 
     public void printList()

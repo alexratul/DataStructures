@@ -29,10 +29,12 @@ public class node {
 
     }
 
-    public node(Object input, node nextNode)
+    public node(Object input)
     {
         setData(input);
-        setNext(nextNode);
+        setNext(null);
     }
+
+
 
 }

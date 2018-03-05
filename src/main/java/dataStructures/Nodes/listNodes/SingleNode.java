@@ -1,9 +1,9 @@
 package dataStructures.Nodes.listNodes;
 
-public class node {
+public class SingleNode {
 
     private Object data;
-    private node next;
+    private SingleNode next;
 
     public Object getData() {
         return data;
@@ -13,23 +13,23 @@ public class node {
         this.data = data;
     }
 
-    public node getNext() {
+    public SingleNode getNext() {
         return next;
     }
 
-    public void setNext(node next) {
+    public void setNext(SingleNode next) {
         this.next = next;
     }
 
 
-    public node()
+    public SingleNode()
     {
         data = null;
         next = null;
 
     }
 
-    public node(Object input)
+    public SingleNode(Object input)
     {
         setData(input);
         setNext(null);

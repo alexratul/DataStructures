@@ -1,11 +1,12 @@
 package tests;
 
-import dataStructures.Structures.lists.simpleList;
+import dataStructures.Structures.lists.SimpleLinkedList;
 
 public class testStructures {
 
     public static void main(String[] args) {
-        simpleList list = new simpleList();
+
+        SimpleLinkedList list = new SimpleLinkedList();
 
         /*Add elements to the list*/
         list.insertLastlist(1);
@@ -25,6 +26,8 @@ public class testStructures {
         list.insertAtPosition(1,666);
 
         list.printList();
+
+
 
     }
 }

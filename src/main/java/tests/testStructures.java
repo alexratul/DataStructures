@@ -1,7 +1,6 @@
 package tests;
 
-import dataStructures.Structures.doubleLinkedlists.DoubleLinkedList;
-import dataStructures.Structures.lists.SimpleLinkedList;
+import dataStructures.Structures.DoubleLinkedlList.DoubleLinkedList;
 
 public class testStructures {
 

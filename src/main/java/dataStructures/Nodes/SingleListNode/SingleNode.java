@@ -1,4 +1,4 @@
-package dataStructures.Nodes.listNodes;
+package dataStructures.Nodes.SingleListNode;
 
 public class SingleNode {
 

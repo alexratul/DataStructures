@@ -1,5 +1,5 @@
-package dataStructures.Structures.doubleLinkedlists;
-import dataStructures.Nodes.doubleNode.DoubleLinkedNode;
+package dataStructures.Structures.DoubleLinkedlList;
+import dataStructures.Nodes.DoubleNode.DoubleLinkedNode;
 
 public class DoubleLinkedList {
 

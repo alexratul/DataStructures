@@ -1,12 +1,14 @@
 package tests;
 
+import dataStructures.Structures.doubleLinkedlists.DoubleLinkedList;
 import dataStructures.Structures.lists.SimpleLinkedList;
 
 public class testStructures {
 
     public static void main(String[] args) {
 
-        SimpleLinkedList list = new SimpleLinkedList();
+//        SimpleLinkedList list = new SimpleLinkedList();
+        DoubleLinkedList list = new DoubleLinkedList();
 
         /*Add elements to the list*/
         list.insertLastlist(1);

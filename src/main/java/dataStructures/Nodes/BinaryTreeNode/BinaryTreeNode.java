@@ -2,7 +2,9 @@ package dataStructures.Nodes.BinaryTreeNode;
 
 public class BinaryTreeNode {
 
-
+    Object data;
+    BinaryTreeNode leftSide;
+    BinaryTreeNode rightSide;
 
     public Object getData() {
         return data;
@@ -28,9 +30,7 @@ public class BinaryTreeNode {
         this.rightSide = rightSide;
     }
 
-    Object data;
-    BinaryTreeNode leftSide;
-    BinaryTreeNode rightSide;
+
 
     public BinaryTreeNode(Object data, BinaryTreeNode leftSide, BinaryTreeNode rightSide) {
         this.data = data;

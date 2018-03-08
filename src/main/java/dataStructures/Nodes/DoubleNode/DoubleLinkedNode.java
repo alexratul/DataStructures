@@ -1,4 +1,4 @@
-package dataStructures.Nodes.doubleNode;
+package dataStructures.Nodes.DoubleNode;
 
 public class DoubleLinkedNode {
 

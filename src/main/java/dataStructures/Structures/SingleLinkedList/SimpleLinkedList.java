@@ -1,6 +1,6 @@
-package dataStructures.Structures.lists;
+package dataStructures.Structures.SingleLinkedList;
 
-import dataStructures.Nodes.listNodes.SingleNode;
+import dataStructures.Nodes.SingleListNode.SingleNode;
 
 public class SimpleLinkedList {
 

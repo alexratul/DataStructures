@@ -39,5 +39,24 @@ public class hashTests {
         assertTrue(hashTable.hasSpace());
     }
 
+    @Test
+    @DisplayName("Test the isFull function")
+    public void  testIsFullFuntionOnHashTable(){
+        hashTable = new HashTable(4);
+        hashTable.put(1,"abc");
+        hashTable.put(2,"abce");
+        hashTable.put(3,"abcd");
+        hashTable.put(4,"Terran op");
+        assertTrue(hashTable.isFull());
+    }
+
+    @Test
+    @DisplayName("test the get on the hashtable")
+    public void testGetOnHashTable() {
+        hashTable = new HashTable(4);
+        hashTable.put(4,"Terran op");
+        assertEquals(hashTable.get(4) , "Terran op");
+    }
+
 
 }

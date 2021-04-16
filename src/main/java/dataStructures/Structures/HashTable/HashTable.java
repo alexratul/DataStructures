@@ -29,7 +29,13 @@ public class HashTable {
     }
 
     public Object get(int key){
-        return null;
+        int index =  0;
+        while(keys[index] != key){
+            index += Math.pow(squareIndex,2);
+            index = index % this.size;
+            squareIndex++;
+        }
+        return values[index];
     }
 
     public void put(int key, Object value){
@@ -39,9 +45,8 @@ public class HashTable {
         space--;
     }
 
-    public void removeKey(Object key){
-
-        space++;
+    public boolean isFull(){
+        return space == 0;
     }
 
     private int hashFunction(){
@@ -52,10 +57,5 @@ public class HashTable {
         }
         return hashedIndex;
     }
-
-    private boolean isFull(){
-        return space == 0;
-    }
-
 
 }

@@ -11,9 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TrieTests {
 
     private Trie trie;
+    String word;
+    String expectedWord;
 
     @BeforeEach
     public void setup(){
+        word = "ale";
+        expectedWord = "alex";
         trie = new Trie();
     }
 
@@ -26,7 +30,6 @@ public class TrieTests {
     @Test
     @DisplayName("Simple check that trie inserts a word on it")
     public void testInsertWordOnTrie(){
-        String word = "ale";
         trie.insertWord(word);
         assertTrue(trie.checkIfTrieHasWord(word));
     }
@@ -34,21 +37,22 @@ public class TrieTests {
     @Test
     @DisplayName("Simple check of negative result on trie")
     public void testNegativeResultOnTrie(){
-        String expectedWord = "alex";
-        String word = "ale";
-
-        trie = new Trie();
-        trie.insertWord(word);
         assertFalse(trie.checkIfTrieHasWord(expectedWord));
     }
 
     @Test
     @DisplayName("Simple check of negative result on a empty trie")
     public void testNegativeResultOnTrieWithEmptyTrie(){
-        String expetedWord = "alex";
-
-        trie = new Trie();
-        assertFalse(trie.checkIfTrieHasWord(expetedWord));
+        Trie emptyTrie = new Trie();
+        assertFalse(emptyTrie .checkIfTrieHasWord(expectedWord));
     }
 
+    @Test
+    @DisplayName("Simple check of negative result on a empty trie")
+    public void testTwoWordsOnTrie(){
+        trie.insertWord(expectedWord);
+
+        assertTrue(trie.checkIfTrieHasWord(word));
+        assertTrue(trie.checkIfTrieHasWord(expectedWord));
+    }
 }

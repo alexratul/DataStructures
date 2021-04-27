@@ -43,12 +43,13 @@ public class Trie {
             }
 
             String letter = word.substring(index,index+1);
-            boolean checkIfTrieHasTheLetter = current.containsLetter(letter);
-            boolean checkIFIsTheLastLetterOnWord = (index + 1) == word.length();
 
-            if (checkIfTrieHasTheLetter){
+            boolean IsTrieHasTheLetter = current.containsLetter(letter);
+            boolean IsTheLastLetterOnWord = (index + 1) == word.length();
 
-                if(checkIFIsTheLastLetterOnWord){
+            if (IsTrieHasTheLetter){
+
+                if(IsTheLastLetterOnWord){
                     return  true;
                 }
             }

@@ -13,11 +13,13 @@ public class TrieTests {
     private Trie trie;
     String word;
     String expectedWord;
+    String anotherExpectedWord;
 
     @BeforeEach
     public void setup(){
         word = "ale";
         expectedWord = "alex";
+        anotherExpectedWord = "Terran";
         trie = new Trie();
     }
 
@@ -48,11 +50,25 @@ public class TrieTests {
     }
 
     @Test
-    @DisplayName("Simple check of negative result on a empty trie")
+    @DisplayName("Simple check of positive result on a trie with 2 words")
     public void testTwoWordsOnTrie(){
         trie.insertWord(expectedWord);
 
         assertTrue(trie.checkIfTrieHasWord(word));
         assertTrue(trie.checkIfTrieHasWord(expectedWord));
+    }
+
+    @Test
+    @DisplayName("Simple check of positive result on a trie with 3 words")
+    public void testThreeWordsOnTrie(){
+        trie = new Trie();
+
+        trie.insertWord(word);
+        trie.insertWord(anotherExpectedWord);
+        trie.insertWord(expectedWord);
+
+        assertTrue(trie.checkIfTrieHasWord(word));
+        assertTrue(trie.checkIfTrieHasWord(expectedWord));
+        assertTrue(trie.checkIfTrieHasWord(anotherExpectedWord));
     }
 }

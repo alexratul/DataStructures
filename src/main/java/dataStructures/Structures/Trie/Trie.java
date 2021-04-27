@@ -33,11 +33,16 @@ public class Trie {
     }
 
     public boolean checkIfTrieHasWord(String word){
+
         TrieNode current = trie;
         for(int index = 0; index < word.length(); index++){
 
-            String letter = word.substring(index,index+1);
+            boolean isTrieEmpty = current.checkIfIsEmpty();
+            if(isTrieEmpty){
+                return false;
+            }
 
+            String letter = word.substring(index,index+1);
             boolean checkIfTrieHasTheLetter = current.containsLetter(letter);
             boolean checkIFIsTheLastLetterOnWord = (index + 1) == word.length();
 

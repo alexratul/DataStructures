@@ -43,4 +43,7 @@ public class TrieNode {
         table.put(letter,newNode);
     }
 
+    public boolean checkIfIsEmpty() {
+        return table.size() == 0;
+    }
 }

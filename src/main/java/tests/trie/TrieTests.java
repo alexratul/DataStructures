@@ -34,12 +34,12 @@ public class TrieTests {
     @Test
     @DisplayName("Simple check of negative result on trie")
     public void testNegativeResultOnTrie(){
-        String expetedWord = "alex";
+        String expectedWord = "alex";
         String word = "ale";
 
         trie = new Trie();
         trie.insertWord(word);
-        assertFalse(trie.checkIfTrieHasWord(expetedWord));
+        assertFalse(trie.checkIfTrieHasWord(expectedWord));
     }
 
     @Test

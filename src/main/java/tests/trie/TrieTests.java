@@ -52,6 +52,7 @@ public class TrieTests {
     @Test
     @DisplayName("Simple check of positive result on a trie with 2 words")
     public void testTwoWordsOnTrie(){
+        trie.insertWord(word);
         trie.insertWord(expectedWord);
 
         assertTrue(trie.checkIfTrieHasWord(word));
@@ -61,8 +62,6 @@ public class TrieTests {
     @Test
     @DisplayName("Simple check of positive result on a trie with 3 words")
     public void testThreeWordsOnTrie(){
-        trie = new Trie();
-
         trie.insertWord(word);
         trie.insertWord(anotherExpectedWord);
         trie.insertWord(expectedWord);
